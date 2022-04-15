@@ -21,21 +21,116 @@
 
     <!-- header section starts -->
     <section class="header">
-        <a href="home.php" class="logo">travel.</a>
-
-        <!-- header section ends -->
-
-
-
-
-
-
+        <a href="home.php" class="logo">Cats Adoption and Well-Being</a>
+        <nav class="navbar">
+            <a href="home.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="cats.php">Cats</a>
+            <a href="profile.php">Profile</a>
+        </nav>
 
 
-        <!-- swiper js link -->
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        <!-- custom js file link -->
-        <script src="js/script.js"></script>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+
+
+    </section>
+    <!-- header section ends -->
+
+    <!-- service section starts -->
+
+    <section class="services">
+        <h1 class="heading-title"> Our services </h1>
+        <div class="box-container">
+            <div class="box">
+                <img scr="images/cat-adopt.jpg" alt="">
+                <h3>Adopt a cat</h3>
+            </div>
+
+            <div class="box">
+                <img scr="images/cat-vaccination.jpg" alt="">
+                <h3>Vaccination</h3>
+            </div>
+
+            <div class="box">
+                <img scr="images/add.png" alt="">
+                <h3>Add a cat for adoption</h3>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+    <!-- service section ends -->
+
+
+
+
+
+
+
+
+    <!-- footer section starts -->
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
+                <a href="about.php"><i class="fas fa-angle-right"></i> About</a>
+                <a href="cats.php"><i class="fas fa-angle-right"></i> Cats</a>
+                <a href="profile.php"><i class="fas fa-angle-right"></i> Profile</a>
+            </div>
+
+            <div class="box">
+                <h3>Extra links</h3>
+                <a href="home.php"> <i class="fas fa-angle-right"></i> Ask questions</a>
+                <a href="about.php"><i class="fas fa-angle-right"></i> About us</a>
+                <a href="cats.php"><i class="fas fa-angle-right"></i> Privacy policy</a>
+                <a href="profile.php"><i class="fas fa-angle-right"></i> Terms of use</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> 018-2123-403</a>
+                <a href="#"><i class="fas fa-phone"></i> 015-5977-6574</a>
+                <a href="#"><i class="fas fa-envelope"></i> khaledahmed512@gmail.com</a>
+                <a href="#"><i class="fas fa-map"></i> Johor Bahru, Johore, Malaysia, 80200</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow us</h3>
+                <a href="#"> <i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
+            </div>
+        </div>
+
+        <div class="credit">
+            Created by <span>Khalid Ahmed Sedik</span> | all rights reserved!
+        </div>
+    </section>
+
+
+
+
+    <!-- footer section ends -->
+
+
+    <!-- swiper js link -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- custom js file link -->
+    <script src="js/script.js"></script>
 
 </body>
 
