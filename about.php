@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About</title>
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
@@ -37,29 +37,11 @@
     </section>
     <!-- header section ends -->
 
-    <!-- service section starts -->
 
-    <section class="services">
-        <h1 class="heading-title"> Our services </h1>
-        <div class="box-container">
-            <div class="box">
-                <img scr="images/cat-adopt.jpg" alt="">
-                <h3>Adopt a cat</h3>
-            </div>
+    <div class="heading" style="background:url(images/header-bg.jpg) no-repeat">
+        <h1>About Us</h1>
 
-            <div class="box">
-                <img scr="images/cat-vaccination.jpg" alt="">
-                <h3>Vaccination</h3>
-            </div>
-
-            <div class="box">
-                <img scr="images/add.png" alt="">
-                <h3>Add a cat for adoption</h3>
-            </div>
-
-
-
-        </div>
+    </div>
 
 
 
@@ -67,9 +49,13 @@
 
 
 
-    </section>
 
-    <!-- service section ends -->
+
+
+
+
+
+
 
 
 
