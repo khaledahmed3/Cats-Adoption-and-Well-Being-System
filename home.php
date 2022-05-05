@@ -27,6 +27,8 @@
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
             <a href="profile.php">Profile</a>
+            <a href="login.php">Login</a>
+
         </nav>
 
 
@@ -37,46 +39,158 @@
     </section>
     <!-- header section ends -->
 
-    <!-- service section starts -->
+    <!-- home section starts -->
 
-    <section class="services">
-        <h1 class="heading-title"> Our services </h1>
-        <div class="box-container">
-            <div class="box">
-                <img scr="images/cat-adopt.jpg" alt="">
-                <h3>Adopt a cat</h3>
+
+    <section class="home">
+
+        <div class="swiper home-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide slide" style="background:url(images/home-slide5.jpg) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, Learn</span>
+                        <h3>discover cat breeds</h3>
+                        <a href="package.php" class="btn">discover more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background:url(images/home-slide4.jpg) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, travel</span>
+                        <h3>Learn more about cats behaviour</h3>
+                        <a href="package.php" class="btn">discover more</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background:url(images/home-slide6.jpg) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, travel</span>
+                        <h3>How do i get the best cat match?</h3>
+                        <a href="package.php" class="btn">discover more</a>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="box">
-                <img scr="images/cat-vaccination.jpg" alt="">
-                <h3>Vaccination</h3>
-            </div>
-
-            <div class="box">
-                <img scr="images/add.png" alt="">
-                <h3>Add a cat for adoption</h3>
-            </div>
-
-
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
 
         </div>
 
+    </section>
 
 
 
+    <!-- home section ends -->
 
 
+    <!-- service section starts -->
+
+    <section class="services">
+
+        <h1 class="heading-title"> our services </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="images/adopt.png" alt="">
+                <h3>adopt a cat</h3>
+            </div>
+
+            <div class="box">
+                <img src="images/post.png" alt="">
+                <h3>post your cat for adoption</h3>
+            </div>
+
+            <div class="box">
+                <img src="images/vaccination.jpg" alt="">
+                <h3>Vaccination</h3>
+            </div>
+
+        </div>
 
     </section>
 
     <!-- service section ends -->
 
+    <!--home about section starts-->
+    <section class="home-about">
+        <div class="image">
+            <img src="images/about-background.jpeg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>about us</h3>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita et, recusandae nobis fugit modi quibusdam ea assumenda, nulla quisquam repellat rem aliquid sequi maxime sapiente autem ipsum? Nobis, provident voluptate?</p>
+            <a href="about.php" class="btn">read more</a>
+        </div>
+    </section>
+    <!--home about section ends-->
+
+    <!--home cats section starts-->
+    <section class="home-cats">
+
+        <h1 class="heading-title"> Cats </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Bella</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+                    <a href="cats.php" class="btn">adopt now</a>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Beach</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+                    <a href="cats.php" class="btn">adopt now</a>
+
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Oscar</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
+                    <a href="cats.php" class="btn">adopt now</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="load-more"><a href="cats.php" class="btn">load more</a></div>
+    </section>
+    <!--home cats section ends-->
+
+    <!--home tips section starts-->
+
+    <section class="home-tips">
+        <div class="content">
+            <h3>Tips</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et quia amet tempore soluta deleniti enim earum dignissimos laborum, doloremque porro provident praesentium? Atque ex quae doloribus eius culpa, numquam esse.</p>
+            <a href="cats.php" class="btn">Learn more</a>
+        </div>
+    </section>
 
 
 
 
 
-
+    <!--home tips section ends-->
 
     <!-- footer section starts -->
     <section class="footer">
