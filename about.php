@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="eng">
 
+<?php
+   session_start(); $username = $_SESSION ? $_SESSION['username'] : null;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +30,13 @@
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
-            <a href="profile.php">Profile</a>
-            <a href="login.php">Login</a>
+             <?php
+            if($username) {
+                echo('<a href="./controllers/logout.controller.php">Logout</a>');
+            } else {
+                echo('<a href="login.php">Login</a>');
+            }
+            ?>
 
         </nav>
 
@@ -40,7 +49,7 @@
     <!-- header section ends -->
 
 
-    <div class="heading" style="background:url(images/header-bg-1.jpg) no-repeat">
+    <div class="heading" style="background:url(images/login-bg.jpg) no-repeat">
         <h1>About Us</h1>
     </div>
 
