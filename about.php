@@ -2,7 +2,8 @@
 <html lang="eng">
 
 <?php
-   session_start(); $username = $_SESSION ? $_SESSION['username'] : null;
+session_start();
+$username = $_SESSION ? $_SESSION['username'] : null;
 ?>
 
 <head>
@@ -30,11 +31,11 @@
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
-             <?php
-            if($username) {
-                echo('<a href="./controllers/logout.controller.php">Logout</a>');
+            <?php
+            if ($username) {
+                echo ('<a href="./controllers/logout.controller.php">Logout</a>');
             } else {
-                echo('<a href="login.php">Login</a>');
+                echo ('<a href="login.php">Login</a>');
             }
             ?>
 
@@ -62,10 +63,10 @@
         </div>
 
         <div class="content">
-            <h3>why choose us?</h3>
+            <h3>Why Choose Us?</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure numquam nulla iusto corporis dolor commodi libero, vitae obcaecati optio rerum ab culpa nesciunt, earum mollitia quasi ipsam non. Aliquid, iure.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid rerum, delectus voluptate aliquam quaerat iusto repellendus error nulla ab atque.</p>
-            
+
             <div class="icons-container">
                 <div class="icons">
                     <i class="fas fa-cat"></i>
@@ -77,7 +78,7 @@
                 </div>
                 <div class="icons">
                     <i class="fas fa-headset"></i>
-                    <span>24/7 guide service</span>
+                    <span>24/7 Guide Service</span>
                 </div>
             </div>
         </div>
@@ -90,7 +91,7 @@
 
     <section class="reviews">
 
-        <h1 class="heading-title"> clients reviews </h1>
+        <h1 class="heading-title"> Clients Reviews </h1>
 
         <div class="swiper reviews-slider">
 
@@ -106,7 +107,7 @@
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
                     <h3>Niloy</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-1.png" alt="">
                 </div>
 
@@ -119,7 +120,7 @@
                     </div>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus repellendus et suscipit optio similique totam aut laborum ullam sequi! In!</p>
                     <h3>Ana</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-2.png" alt="">
                 </div>
 
@@ -131,7 +132,7 @@
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus enim deserunt, ab at ea iste odio placeat doloribus eum dolores tempore obcaecati, dolore esse aperiam. Excepturi ad quo distinctio, dignissimos voluptate, dolores, saepe animi eum atque sint esse ab exercitationem!</p>
                     <h3>Dani</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-3.png" alt="">
                 </div>
 
@@ -145,7 +146,7 @@
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus recusandae cum quibusdam odio dignissimos nemo?</p>
                     <h3>Amirah</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-4.png" alt="">
                 </div>
 
@@ -157,7 +158,7 @@
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
                     <h3>Sarim</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-5.png" alt="">
                 </div>
 
@@ -170,7 +171,7 @@
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
                     <h3>Sam</h3>
-                    <span>cat owner</span>
+                    <span>Cat Owner</span>
                     <img src="images/pic-6.png" alt="">
                 </div>
 
