@@ -22,7 +22,7 @@ require 'dbcon.php';
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="images/admin-icon.jpg">
-                        <span class=" nav-item">Admin Khalid</span>
+                        <span class=" nav-item">Admin</span>
                     </a></li>
                 <li><a href="admin.php">
                         <i class="fas fa-menorah"></i>
