@@ -12,7 +12,6 @@ require 'dbcon.php';
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <title>Admin CRUD</title>
 </head>
 
@@ -81,6 +80,7 @@ require 'dbcon.php';
                     </div>
                 </div>
             </div>
+         <a href="admin.php" class="btn">Admin View</a>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
