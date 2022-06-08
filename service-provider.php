@@ -4,13 +4,12 @@
 session_start();
 $usernarme = $_SESSION ? $_SESSION['username'] : null;
 $role_id = $_SESSION ? $_SESSION['role_id'] : null;
-if ($role_id != 1) header('Location: home.php');
-require 'dbcon.php';
+if ($role_id != 3) header('Location: home.php');
 ?>
 
 <head>
     <meta charset="UTF-8" />
-    <title>Admin Dashboard</title>
+    <title>Service Provider Dashboard</title>
     <link rel="stylesheet" href="css/users.css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -20,29 +19,24 @@ require 'dbcon.php';
     <div class="container">
         <nav>
             <ul>
-                <li><a href="admin.php" class="logo">
-                        <img src="images/admin-icon.jpg">
-                        <span class=" nav-item">Admin</span>
+                <li><a href="service-provider.php" class="logo">
+                        <span class=" nav-item">Service Provider</span>
                     </a></li>
-                <li><a href="admin.php">
+                <li><a href="service-provider.php">
                         <i class="fas fa-menorah"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
-                <li><a href="admin-list.php">
-                        <i class="fas fa-user"></i>
-                        <span class="nav-item">Admins</span>
-                    </a></li>
-                <li><a href="owner-list-A.php">
+                <li><a href="owner-list-SV.php">
                         <i class="fas fa-users"></i>
-                        <span class="nav-item">Owners/Cats List</span>
+                        <span class="nav-item">List Of Owners/Cats</span>
                     </a></li>
-                <li><a href="service-provider-list.php">
-                        <i class="fas fa-users"></i>
-                        <span class="nav-item">Service Providers List</span>
-                    </a></li>
-                <li><a href="index.php">
+                <li><a href="#">
                         <i class="fas fa-plus"></i>
-                        <span class="nav-item">Add Admin/Provider</span>
+                        <span class="nav-item">Add Cats</span>
+                    </a></li>
+                <li><a href="#">
+                        <i class="fas fa-heart"></i>
+                        <span class="nav-item">Healthcare</span>
                     </a></li>
                 <li><a href="./controllers/logout.controller.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
@@ -69,7 +63,7 @@ require 'dbcon.php';
                 </div>
                 <div class="card">
                     <img src="images/pic-2.png">
-                    <h4>Balbina Kherr</h4>
+                    <h4>Balbina kherr</h4>
                     <p>Client</p>
                     <div class="per">
 
@@ -87,7 +81,7 @@ require 'dbcon.php';
                 </div>
                 <div class="card">
                     <img src="images/pic-4.png">
-                    <h4>Sara David</h4>
+                    <h4>Salina micheal</h4>
                     <p>Client</p>
                     <div class="per">
 
@@ -97,7 +91,7 @@ require 'dbcon.php';
             </div>
             <section class="attendance">
                 <div class="attendance-list">
-                    <h1>User List</h1>
+                    <h1>Client List</h1>
                     <table class="table">
                         <thead>
                             <tr>
@@ -106,30 +100,42 @@ require 'dbcon.php';
                                 <th>Email</th>
                                 <th>Password</th>
                                 <th>Role ID</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tbody>
-                            <?php
-                            $query = "SELECT * FROM users";
-                            $query_run = mysqli_query($con, $query);
-
-                            if (mysqli_num_rows($query_run) > 0) {
-                                foreach ($query_run as $users) {
-                                    ?>
-                                    <tr>
-                                        <td><?= $users['id']; ?></td>
-                                        <td><?= $users['username']; ?></td>
-                                        <td><?= $users['email']; ?></td>
-                                        <td><?= $users['password']; ?></td>
-                                        <td><?= $users['role_id']; ?></td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo "<h5> No Record Found </h5>";
-                            }
-                            ?>
+                            <tr>
+                                <td>01</td>
+                                <td>Sam David</td>
+                                <td>Samdavid@gmail.com</td>
+                                <td>123456</td>
+                                <td>02</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr class="active">
+                                <td>02</td>
+                                <td>Balbina Kherr</td>
+                                <td>Balbinakherr@gmail.com</td>
+                                <td>123456</td>
+                                <td>02</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>Badan John</td>
+                                <td>Badanjohn@gmail.com</td>
+                                <td>123456</td>
+                                <td>02</td>
+                                <td><button>View</button></td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>Sara David</td>
+                                <td>Saradavid@gmail.com</td>
+                                <td>123456</td>
+                                <td>02</td>
+                                <td><button>View</button></td>
+                            </tr>
 
                         </tbody>
                     </table>

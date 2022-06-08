@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="eng">
 
+<?php
+session_start();
+$username = $_SESSION ? $_SESSION['username'] : null;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +31,14 @@
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
-            <a href="profile.php">Profile</a>
-            <a href="login.php">Login</a>
+            <?php
+            if ($username) {
+                echo ('<a href="./controllers/logout.controller.php">Logout</a>');
+            } else {
+                echo ('<a href="login.php">Login</a>');
+            }
+            ?>
+
 
         </nav>
 
@@ -50,25 +61,25 @@
 
                 <div class="swiper-slide slide" style="background:url(images/home-slide5.jpg) no-repeat">
                     <div class="content">
-                        <span>explore, discover, Learn</span>
-                        <h3>discover cat breeds</h3>
-                        <a href="package.php" class="btn">discover more</a>
+                        <span>Explore, Discover, Learn</span>
+                        <h3>Discover Cats Breeds</h3>
+                        <a href="package.php" class="btn">Explore More</a>
                     </div>
                 </div>
 
                 <div class="swiper-slide slide" style="background:url(images/home-slide4.jpg) no-repeat">
                     <div class="content">
-                        <span>explore, discover, travel</span>
-                        <h3>Learn more about cats behaviour</h3>
-                        <a href="package.php" class="btn">discover more</a>
+                        <span>Explore, Discover, Learn</span>
+                        <h3>Learn More About Cats Behaviour</h3>
+                        <a href="package.php" class="btn">Discover More</a>
                     </div>
                 </div>
 
                 <div class="swiper-slide slide" style="background:url(images/home-slide6.jpg) no-repeat">
                     <div class="content">
-                        <span>explore, discover, travel</span>
+                        <span>Explore, Discover, Learn</span>
                         <h3>How do i get the best cat match?</h3>
-                        <a href="package.php" class="btn">discover more</a>
+                        <a href="package.php" class="btn">Learn More</a>
                     </div>
                 </div>
 
@@ -90,23 +101,26 @@
 
     <section class="services">
 
-        <h1 class="heading-title"> our services </h1>
+        <h1 class="heading-title"> Our Services </h1>
 
         <div class="box-container">
 
             <div class="box">
                 <img src="images/adopt.png" alt="">
-                <h3>adopt a cat</h3>
+                <h3>Adopt a Cat</h3>
+                <a href="cats.php" class="btn">Click Here</a>
             </div>
 
             <div class="box">
                 <img src="images/post.png" alt="">
-                <h3>post your cat for adoption</h3>
+                <h3>Post Your Cat for Adoption</h3>
+                <a href="cats.php" class="btn">Click Here</a>
             </div>
 
             <div class="box">
                 <img src="images/vaccination.jpg" alt="">
                 <h3>Vaccination</h3>
+                <a href="cats.php" class="btn">Click Here</a>
             </div>
 
         </div>
@@ -122,7 +136,7 @@
         </div>
 
         <div class="content">
-            <h3>about us</h3>
+            <h3>About Us</h3>
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita et, recusandae nobis fugit modi quibusdam ea assumenda, nulla quisquam repellat rem aliquid sequi maxime sapiente autem ipsum? Nobis, provident voluptate?</p>
             <a href="about.php" class="btn">read more</a>
         </div>
@@ -143,7 +157,7 @@
                 <div class="content">
                     <h3>Bella</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
-                    <a href="cats.php" class="btn">adopt now</a>
+                    <a href="cats.php" class="btn">Adopt now</a>
 
                 </div>
             </div>
@@ -155,7 +169,7 @@
                 <div class="content">
                     <h3>Beach</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
-                    <a href="cats.php" class="btn">adopt now</a>
+                    <a href="cats.php" class="btn">Adopt now</a>
 
                 </div>
             </div>
@@ -167,12 +181,12 @@
                 <div class="content">
                     <h3>Oscar</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, sint!</p>
-                    <a href="cats.php" class="btn">adopt now</a>
+                    <a href="cats.php" class="btn">Adopt now</a>
 
                 </div>
             </div>
         </div>
-        <div class="load-more"><a href="cats.php" class="btn">load more</a></div>
+        <div class="load-more"><a href="cats.php" class="btn">Load More</a></div>
     </section>
     <!--home cats section ends-->
 
@@ -182,7 +196,7 @@
         <div class="content">
             <h3>Tips</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et quia amet tempore soluta deleniti enim earum dignissimos laborum, doloremque porro provident praesentium? Atque ex quae doloribus eius culpa, numquam esse.</p>
-            <a href="cats.php" class="btn">Learn more</a>
+            <a href="cats.php" class="btn">Learn More</a>
         </div>
     </section>
 

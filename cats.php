@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="eng">
 
+<?php
+session_start();
+$username = $_SESSION ? $_SESSION['username'] : null;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,42 +31,167 @@
             <a href="home.php">Home</a>
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
-            <a href="profile.php">Profile</a>
+            <?php
+            if ($username) {
+                echo ('<a href="./controllers/logout.controller.php">Logout</a>');
+            } else {
+                echo ('<a href="login.php">Login</a>');
+            }
+            ?>
         </nav>
-
-
         <div id="menu-btn" class="fas fa-bars"></div>
-
-
-
     </section>
     <!-- header section ends -->
 
+    <!-- cats section starts -->
 
-    <div class="heading" style="background:url(images/header-bg.jpg) no-repeat">
+    <div class="heading" style="background:url(images/login-bg.jpg) no-repeat">
         <h1>Cats</h1>
-
     </div>
 
+    <section class="cats">
 
+        <h1 class="heading-title">Adopt Now</h1>
 
+        <div class="box-container">
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Bella</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Charlie</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Willow</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-4.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Lucy</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-5.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Simba</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-6.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Zoe</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-7.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Yeezy</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-8.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Luna</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-9.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Milo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-10.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Oliver</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-11.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Leo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+            <div class="box">
+                <div class="image">
+                    <img src="images/cat-12.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <h3>Loki</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
+                    <a href="adopt.php" class="btn">Adopt</a>
+                </div>
+            </div>
 
+        </div>
+        <div class="load-more"><span class="btn">Load More</span></div>
+    </section>
 
-
-
-
+    <!-- cats section ends -->
 
 
     <!-- footer section starts -->
