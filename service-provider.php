@@ -20,7 +20,8 @@ if ($role_id != 3) header('Location: home.php');
         <nav>
             <ul>
                 <li><a href="service-provider.php" class="logo">
-                        <span class=" nav-item">Service Provider</span>
+                        <i class="fas fa-user"></i>
+                        <span class=" nav-item">Provider</span>
                     </a></li>
                 <li><a href="service-provider.php">
                         <i class="fas fa-menorah"></i>

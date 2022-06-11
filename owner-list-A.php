@@ -65,7 +65,6 @@ require 'dbcon.php';
                         </tr>
                     </thead>
                     <tbody>
-                    <tbody>
                         <?php
                         $query = "SELECT * FROM users";
                         $query_run = mysqli_query($con, $query);
