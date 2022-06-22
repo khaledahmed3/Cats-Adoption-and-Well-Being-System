@@ -11,7 +11,7 @@ require 'dbcon.php';
 <head>
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="css/users.css" />
+    <link rel="stylesheet" href="../css/users.css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -21,7 +21,7 @@ require 'dbcon.php';
         <nav>
             <ul>
                 <li><a href="admin.php" class="logo">
-                        <img src="images/admin-icon.jpg">
+                        <img src="../images/admin-icon.jpg">
                         <span class=" nav-item">Admin</span>
                     </a></li>
                 <li><a href="admin.php">
@@ -36,7 +36,7 @@ require 'dbcon.php';
                         <i class="fas fa-users"></i>
                         <span class="nav-item">Owners/Cats List</span>
                     </a></li>
-                <li><a href="service-provider-list.php">
+                <li><a href="../provider/service-provider-list.php">
                         <i class="fas fa-users"></i>
                         <span class="nav-item">Service Providers List</span>
                     </a></li>
@@ -44,7 +44,7 @@ require 'dbcon.php';
                         <i class="fas fa-plus"></i>
                         <span class="nav-item">Add Admin/Provider</span>
                     </a></li>
-                <li><a href="./controllers/logout.controller.php" class="logout">
+                <li><a href="../controllers/logout.controller.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Log out</span>
                     </a></li>
@@ -59,7 +59,7 @@ require 'dbcon.php';
             </div>
             <div class="users">
                 <div class="card">
-                    <img src="images/pic-1.png">
+                    <img src="../images/pic-1.png">
                     <h4>Sam David</h4>
                     <p>Client</p>
                     <div class="per">
@@ -68,7 +68,7 @@ require 'dbcon.php';
                     <button>Profile</button>
                 </div>
                 <div class="card">
-                    <img src="images/pic-2.png">
+                    <img src="../images/pic-2.png">
                     <h4>Balbina Kherr</h4>
                     <p>Client</p>
                     <div class="per">
@@ -77,7 +77,7 @@ require 'dbcon.php';
                     <button>Profile</button>
                 </div>
                 <div class="card">
-                    <img src="images/pic-3.png">
+                    <img src="../images/pic-3.png">
                     <h4>Badan John</h4>
                     <p>Client</p>
                     <div class="per">
@@ -86,7 +86,7 @@ require 'dbcon.php';
                     <button>Profile</button>
                 </div>
                 <div class="card">
-                    <img src="images/pic-4.png">
+                    <img src="../images/pic-4.png">
                     <h4>Sara David</h4>
                     <p>Client</p>
                     <div class="per">
