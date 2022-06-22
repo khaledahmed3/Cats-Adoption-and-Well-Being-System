@@ -114,13 +114,13 @@ $username = $_SESSION ? $_SESSION['username'] : null;
             <div class="box">
                 <img src="images/post.png" alt="">
                 <h3>Post Your Cat for Adoption</h3>
-                <a href="cats.php" class="btn">Click Here</a>
+                <a href="addCat.php" class="btn">Click Here</a>
             </div>
 
             <div class="box">
                 <img src="images/vaccination.jpg" alt="">
                 <h3>Vaccination</h3>
-                <a href="cats.php" class="btn">Click Here</a>
+                <a href="./provider/healthcare.php" class="btn">Click Here</a>
             </div>
 
         </div>
@@ -216,15 +216,15 @@ $username = $_SESSION ? $_SESSION['username'] : null;
                 <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
                 <a href="about.php"><i class="fas fa-angle-right"></i> About</a>
                 <a href="cats.php"><i class="fas fa-angle-right"></i> Cats</a>
-                <a href="profile.php"><i class="fas fa-angle-right"></i> Profile</a>
+                <a href="login.php"><i class="fas fa-angle-right"></i> Login</a>
             </div>
 
             <div class="box">
                 <h3>Extra links</h3>
-                <a href="home.php"> <i class="fas fa-angle-right"></i> Ask questions</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> Ask questions</a>
                 <a href="about.php"><i class="fas fa-angle-right"></i> About us</a>
-                <a href="cats.php"><i class="fas fa-angle-right"></i> Privacy policy</a>
-                <a href="profile.php"><i class="fas fa-angle-right"></i> Terms of use</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Privacy policy</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Terms of use</a>
             </div>
 
             <div class="box">

@@ -6,6 +6,12 @@ session_start();
 $username = $_SESSION ? $_SESSION['username'] : null;
 ?>
 
+<?php
+if ($_GET["status"] == "success") :
+    echo "<script>alert('Form Submitted Succesfully');</script>";
+endif;
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,13 +44,8 @@ $username = $_SESSION ? $_SESSION['username'] : null;
                 echo ('<a href="login.php">Login</a>');
             }
             ?>
-
         </nav>
-
-
         <div id="menu-btn" class="fas fa-bars"></div>
-
-
 
     </section>
     <!-- header section ends -->
@@ -52,7 +53,6 @@ $username = $_SESSION ? $_SESSION['username'] : null;
 
     <div class="heading" style="background:url(images/bg.png) no-repeat">
         <h1>Adoption Form</h1>
-
     </div>
 
     <!-- adopting section starts  -->
@@ -100,23 +100,6 @@ $username = $_SESSION ? $_SESSION['username'] : null;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- footer section starts -->
     <section class="footer">
 
@@ -127,15 +110,15 @@ $username = $_SESSION ? $_SESSION['username'] : null;
                 <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
                 <a href="about.php"><i class="fas fa-angle-right"></i> About</a>
                 <a href="cats.php"><i class="fas fa-angle-right"></i> Cats</a>
-                <a href="profile.php"><i class="fas fa-angle-right"></i> Profile</a>
+                <a href="login.php"><i class="fas fa-angle-right"></i> Login</a>
             </div>
 
             <div class="box">
                 <h3>Extra links</h3>
-                <a href="home.php"> <i class="fas fa-angle-right"></i> Ask questions</a>
-                <a href="about.php"><i class="fas fa-angle-right"></i> About us</a>
-                <a href="cats.php"><i class="fas fa-angle-right"></i> Privacy policy</a>
-                <a href="profile.php"><i class="fas fa-angle-right"></i> Terms of use</a>
+                <a href="#"> <i class="fas fa-angle-right"></i> Ask questions</a>
+                <a href="#"><i class="fas fa-angle-right"></i> About us</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Privacy policy</a>
+                <a href="#"><i class="fas fa-angle-right"></i> Terms of use</a>
             </div>
 
             <div class="box">
