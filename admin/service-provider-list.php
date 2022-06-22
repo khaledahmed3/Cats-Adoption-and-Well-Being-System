@@ -10,7 +10,7 @@ require 'dbcon.php';
 <head>
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="css/List.css" />
+    <link rel="stylesheet" href="../css/list.css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -20,8 +20,8 @@ require 'dbcon.php';
         <nav>
             <ul>
                 <li><a href="admin.php" class="logo">
-                        <img src="images/admin-icon.jpg">
-                        <span class=" nav-item">Admin</span>
+                        <img src="../images/admin-icon.jpg">
+                        <span class="nav-item">Admin</span>
                     </a></li>
                 <li><a href="admin.php">
                         <i class="fas fa-menorah"></i>
@@ -31,7 +31,7 @@ require 'dbcon.php';
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Admins</span>
                     </a></li>
-                <li><a href="owner-list.php">
+                <li><a href="owner-list-A.php">
                         <i class="fas fa-users"></i>
                         <span class="nav-item">List Of Owners</span>
                     </a></li>
@@ -43,7 +43,7 @@ require 'dbcon.php';
                         <i class="fas fa-plus"></i>
                         <span class="nav-item">Add Admin/Provider</span>
                     </a></li>
-                <li><a href="./controllers/logout.controller.php" class="logout">
+                <li><a href="../controllers/logout.controller.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Log out</span>
                     </a></li>
@@ -53,7 +53,7 @@ require 'dbcon.php';
 
         <section class="attendance">
             <div class="attendance-list">
-                <h1>Owner List</h1>
+                <h1>Service Provider List</h1>
                 <table class="table">
                     <thead>
                         <tr>
@@ -64,6 +64,7 @@ require 'dbcon.php';
                             <th>Role ID</th>
                         </tr>
                     </thead>
+                    <tbody>
                     <tbody>
                         <?php
                         $query = "SELECT * FROM users";

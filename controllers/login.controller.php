@@ -18,10 +18,10 @@ if ($result->num_rows > 0) {
     echo($value['role_id']);
 
     if ($value['role_id'] == 1) {
-      header('Location: ../admin.php');
+      header('Location: ../admin/admin.php');
     }
     else if ($value['role_id'] == 3) {
-      header('Location: ../service-provider.php');
+      header('Location: ../provider/service-provider.php');
     }
     else {
       header('Location: ../home.php');

@@ -13,7 +13,7 @@
       $request = " insert into adopt_form(username, email, catID, address, phonenumber, postcode) values('$username','$email','$catID','$address','$phonenumber','$postcode') ";
       mysqli_query($connection, $request);
 
-      header('location: ../adopt.php'); 
+      header('location: ../adopt.php?status=success'); 
 
    }
    else{
