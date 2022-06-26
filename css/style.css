@@ -524,7 +524,7 @@ h4 {
 }
 
 form {
-    width: 300px;
+    /* width: 300px; */
     margin-left: 20px;
 }
 
@@ -579,9 +579,11 @@ p {
 }
 
 .adopting .adopt-form {
+    justify-content: center;
+    align: center;
     padding: 2rem;
     background: var(--light-bg);
-    margin-left: 600px;
+    /* margin-left: 600px; */
 }
 
 .adopting .adopt-form .flex {
@@ -595,7 +597,7 @@ p {
 }
 
 .adopting .adopt-form .flex .inputBox input {
-    width: 100%;
+    /* width: 100%; */
     padding: 1.2rem 1.4rem;
     font-size: 1.6rem;
     color: var(--main-color);

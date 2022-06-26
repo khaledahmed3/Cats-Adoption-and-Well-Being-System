@@ -4,13 +4,13 @@
 <?php
 session_start();
 $username = $_SESSION ? $_SESSION['username'] : null;
-?>
-
-<?php
-if ($_GET["status"] == "success") :
+require './controllers/adopt_form.php';
+if (isset($_GET["status"])) :
     echo "<script>alert('Form Submitted Succesfully');</script>";
 endif;
 ?>
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -28,6 +28,7 @@ endif;
 </head>
 
 <body>
+
 
 
     <!-- header section starts -->
@@ -55,13 +56,23 @@ endif;
         <h1>Adoption Form</h1>
     </div>
 
+
     <!-- adopting section starts  -->
+    <?php if (isset($_SESSION['message'])) :   ?>
+        <div class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
+            <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                ?>
+        </div>
+    <?php endif; ?>
 
     <section class="adopting">
 
         <h1 class="heading-title">Fill Up The Form!</h1>
 
-        <form action="./controllers/adopt_form.php" method="post" class="adopt-form">
+
+        <form action="./controllers/adopt_form.php" method="POST" class="adopt-form">
 
             <div class="flex">
                 <div class="inputBox">
@@ -73,8 +84,8 @@ endif;
                     <input type="email" placeholder="Enter Your Email" name="email" required="required">
                 </div>
                 <div class="inputBox">
-                    <span>Cat ID:</span>
-                    <input type="tel" placeholder="Enter Cat ID" name="catID" required="required">
+                    <span>Cat ID</span>
+                    <input type="text" class="catId" placeholder="Enter Cat ID" name="catId">
                 </div>
                 <div class="inputBox">
                     <span>Address :</span>
@@ -89,9 +100,7 @@ endif;
                     <input type="tel" placeholder="Enter Your Post Code" name="postcode" required="required">
                 </div>
             </div>
-
             <input type="submit" value="Submit" class="btn" name="send" required="required">
-
         </form>
 
     </section>
@@ -143,7 +152,16 @@ endif;
         </div>
     </section>
 
-
+    <script>
+        var getURLparameter = function(paraName) {
+            let Parameters = new URLSearchParams(window.location.search);
+            return Parameters.get(paraName);
+        }
+        var catId = getURLparameter('catId');
+        const catIdInput = document.querySelector('.catId');
+        catIdInput.value = catId;
+        console.log(catId)
+    </script>
 
 
     <!-- footer section ends -->

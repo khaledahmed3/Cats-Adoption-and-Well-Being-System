@@ -4,6 +4,7 @@
 <?php
 session_start();
 $username = $_SESSION ? $_SESSION['username'] : null;
+require './provider/dbcon1.php';
 ?>
 
 <head>
@@ -55,137 +56,31 @@ $username = $_SESSION ? $_SESSION['username'] : null;
 
         <div class="box-container">
 
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-1.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Bella</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
 
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-2.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Charlie</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
+            <?php
+            $query = "SELECT * FROM cats";
+            $query_run = mysqli_query($con, $query);
 
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-3.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Willow</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
+            if (mysqli_num_rows($query_run) > 0) {
+                foreach ($query_run as $cats) {
+                    ?>
+                    <div class="box">
+                        <div class="image">
+                            <img src="images/<?= $cats['image']; ?>" alt="">
+                        </div>
+                        <div class="content">
+                            <h3><?= $cats['name']; ?></h3>
+                            <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
+                            <a href="adopt.php?catId=<?php echo $cats['cat_id']; ?>" class="btn">Adopt</a>
+                        </div>
+                    </div>
+            <?php
+                }
+            } else {
+                echo "<h5> No Record Found </h5>";
+            }
+            ?>
 
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-4.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Lucy</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-5.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Simba</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-6.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Zoe</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-7.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Yeezy</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-8.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Luna</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-9.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Milo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-10.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Oliver</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-11.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Leo</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="images/cat-12.jpeg" alt="">
-                </div>
-                <div class="content">
-                    <h3>Loki</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, perspiciatis!</p>
-                    <a href="adopt.php" class="btn">Adopt</a>
-                </div>
-            </div>
 
         </div>
         <div class="load-more"><span class="btn">Load More</span></div>
