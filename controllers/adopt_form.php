@@ -1,22 +1,20 @@
 <?php
 
-   $connection = mysqli_connect('localhost:3306','root','','fyp');
+$connection = new mysqli('localhost:3306', 'root', '', 'fyp');
 
-   if(isset($_POST['send'])){
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $catID = $_POST['catID'];
-      $address = $_POST['address'];
-      $phonenumber = $_POST['phonenumber'];
-      $postcode = $_POST['postcode'];
+if (isset($_POST['send'])) {
+   var_dump($_POST);
+   $username = $_POST['username'];
+   $email = $_POST['email'];
+   $catId = $_POST['catId'];
+   $address = $_POST['address'];
+   $phonenumber = $_POST['phonenumber'];
+   $postcode = $_POST['postcode'];
 
-      $request = " insert into adopt_form(username, email, catID, address, phonenumber, postcode) values('$username','$email','$catID','$address','$phonenumber','$postcode') ";
-      mysqli_query($connection, $request);
+   $request = " insert into adopt_form(username, email, catID, address, phonenumber, postcode) values('$username','$email', '$catId', '$address','$phonenumber','$postcode') ";
+   $result = $connection->query($request);
+   echo $result;
 
-      header('location: ../adopt.php?status=success'); 
-
-   }
-   else{
-      echo "<script>alert('Empty fields are required');document.location='../adopt.php'</script>";
-   }
-   
+   $_SESSION['message'] = "Record has been saved";
+   $_SESSION['msg_type'] = "success";
+}
