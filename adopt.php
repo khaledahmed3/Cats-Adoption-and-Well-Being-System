@@ -2,9 +2,11 @@
 <html lang="eng">
 
 <?php
-session_start();
-$username = $_SESSION ? $_SESSION['username'] : null;
 require './controllers/adopt_form.php';
+
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+}
 if (isset($_GET["status"])) :
     echo "<script>alert('Form Submitted Succesfully');</script>";
 endif;
@@ -57,15 +59,6 @@ endif;
     </div>
 
 
-    <!-- adopting section starts  -->
-    <?php if (isset($_SESSION['message'])) :   ?>
-        <div class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
-            <?php
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-                ?>
-        </div>
-    <?php endif; ?>
 
     <section class="adopting">
 

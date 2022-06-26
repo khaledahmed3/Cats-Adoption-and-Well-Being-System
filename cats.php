@@ -14,7 +14,12 @@ require './provider/dbcon1.php';
     <title>Cats</title>
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -47,23 +52,30 @@ require './provider/dbcon1.php';
     <!-- cats section starts -->
 
     <div class="heading" style="background:url(images/login-bg.jpg) no-repeat">
+
+
         <h1>Cats</h1>
     </div>
 
     <section class="cats">
 
         <h1 class="heading-title">Adopt Now</h1>
-
+        <?php if (isset($_SESSION['message'])) :   ?>
+            <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
+                <?php
+                echo $_SESSION['message'];
+                unset($_SESSION['message']);
+                ?>
+            </h1>
+        <?php endif; ?>
         <div class="box-container">
-
-
             <?php
             $query = "SELECT * FROM cats";
             $query_run = mysqli_query($con, $query);
 
             if (mysqli_num_rows($query_run) > 0) {
                 foreach ($query_run as $cats) {
-                    ?>
+            ?>
                     <div class="box">
                         <div class="image">
                             <img src="images/<?= $cats['image']; ?>" alt="">
@@ -142,6 +154,13 @@ require './provider/dbcon1.php';
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+    <script>
+        $(function() {
+            setTimeout(function() {
+                $("#alert").fadeOut(1500);
+            }, 1000)
+        })
+    </script>
 
 </body>
 

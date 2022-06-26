@@ -59,12 +59,12 @@ require 'dbcon1.php';
 
                     <tbody>
                         <?php
-                        $query = "SELECT * FROM users";
+                        $query = "SELECT * FROM users WHERE role_id=2";
                         $query_run = mysqli_query($con, $query);
 
                         if (mysqli_num_rows($query_run) > 0) {
                             foreach ($query_run as $users) {
-                                ?>
+                        ?>
                                 <tr>
                                     <td><?= $users['id']; ?></td>
                                     <td><?= $users['username']; ?></td>
