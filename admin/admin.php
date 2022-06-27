@@ -22,11 +22,7 @@ require 'dbcon.php';
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="../images/admin-icon.jpg">
-                        <span class=" nav-item">Admin</span>
-                    </a></li>
-                <li><a href="admin.php">
-                        <i class="fas fa-menorah"></i>
-                        <span class="nav-item">Dashboard</span>
+                        <span class=" nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="admin-list.php">
                         <i class="fas fa-user"></i>
@@ -36,7 +32,7 @@ require 'dbcon.php';
                         <i class="fas fa-users"></i>
                         <span class="nav-item">Owners/Cats List</span>
                     </a></li>
-                <li><a href="../provider/service-provider-list.php">
+                <li><a href="service-provider-list.php">
                         <i class="fas fa-users"></i>
                         <span class="nav-item">Service Providers List</span>
                     </a></li>
@@ -55,45 +51,6 @@ require 'dbcon.php';
         <section class="main">
             <div class="main-top">
                 <h1>Dashboard</h1>
-                <i class="fas fa-user-cog"></i>
-            </div>
-            <div class="users">
-                <div class="card">
-                    <img src="../images/pic-1.png">
-                    <h4>Sam David</h4>
-                    <p>Client</p>
-                    <div class="per">
-
-                    </div>
-                    <button>Profile</button>
-                </div>
-                <div class="card">
-                    <img src="../images/pic-2.png">
-                    <h4>Balbina Kherr</h4>
-                    <p>Client</p>
-                    <div class="per">
-
-                    </div>
-                    <button>Profile</button>
-                </div>
-                <div class="card">
-                    <img src="../images/pic-3.png">
-                    <h4>Badan John</h4>
-                    <p>Client</p>
-                    <div class="per">
-
-                    </div>
-                    <button>Profile</button>
-                </div>
-                <div class="card">
-                    <img src="../images/pic-4.png">
-                    <h4>Sara David</h4>
-                    <p>Client</p>
-                    <div class="per">
-
-                    </div>
-                    <button>Profile</button>
-                </div>
             </div>
             <section class="attendance">
                 <div class="attendance-list">
@@ -104,14 +61,13 @@ require 'dbcon.php';
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Password</th>
                                 <th>Role ID</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tbody>
                             <?php
-                            $query = "SELECT * FROM users";
+                            $query = "SELECT * FROM users WHERE role_id=2 OR role_id=3";
                             $query_run = mysqli_query($con, $query);
 
                             if (mysqli_num_rows($query_run) > 0) {
@@ -121,7 +77,6 @@ require 'dbcon.php';
                                         <td><?= $users['id']; ?></td>
                                         <td><?= $users['username']; ?></td>
                                         <td><?= $users['email']; ?></td>
-                                        <td><?= $users['password']; ?></td>
                                         <td><?= $users['role_id']; ?></td>
                                     </tr>
                             <?php

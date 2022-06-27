@@ -52,7 +52,6 @@ require 'dbcon1.php';
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>Role ID</th>
                         </tr>
                     </thead>
@@ -64,12 +63,11 @@ require 'dbcon1.php';
 
                         if (mysqli_num_rows($query_run) > 0) {
                             foreach ($query_run as $users) {
-                        ?>
+                                ?>
                                 <tr>
                                     <td><?= $users['id']; ?></td>
                                     <td><?= $users['username']; ?></td>
                                     <td><?= $users['email']; ?></td>
-                                    <td><?= $users['password']; ?></td>
                                     <td><?= $users['role_id']; ?></td>
                                 </tr>
                         <?php
@@ -79,10 +77,51 @@ require 'dbcon1.php';
                         }
                         ?>
 
+
                     </tbody>
                 </table>
             </div>
+            <div>
+                <div class="attendance-list">
+                    <h1>Cats List</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cat ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Breed</th>
+                                <th>Age</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $query = "SELECT * FROM cats";
+                            $query_run = mysqli_query($con, $query);
+
+                            if (mysqli_num_rows($query_run) > 0) {
+                                foreach ($query_run as $cats) {
+                                    ?>
+                                    <tr>
+
+                                        <td><?= $cats['cat_id']; ?></td>
+                                        <td><?= $cats['name']; ?></td>
+                                        <td><?= $cats['gender']; ?></td>
+                                        <td><?= $cats['breed']; ?></td>
+                                        <td><?= $cats['age']; ?></td>
+                                    </tr>
+                            <?php
+                                }
+                            } else {
+                                echo "<h5> No Record Found </h5>";
+                            }
+                            ?>
+
+                        </tbody>
+                    </table>
+                </div>
         </section>
+
     </div>
 
 </body>

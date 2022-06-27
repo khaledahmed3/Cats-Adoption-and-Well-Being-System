@@ -52,14 +52,13 @@ require 'dbcon1.php';
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>Role ID</th>
                         </tr>
                     </thead>
                     <tbody>
                     <tbody>
                         <?php
-                        $query = "SELECT * FROM users";
+                        $query = "SELECT * FROM users WHERE role_id=2";
                         $query_run = mysqli_query($con, $query);
 
                         if (mysqli_num_rows($query_run) > 0) {
@@ -69,7 +68,6 @@ require 'dbcon1.php';
                                     <td><?= $users['id']; ?></td>
                                     <td><?= $users['username']; ?></td>
                                     <td><?= $users['email']; ?></td>
-                                    <td><?= $users['password']; ?></td>
                                     <td><?= $users['role_id']; ?></td>
                                 </tr>
                         <?php

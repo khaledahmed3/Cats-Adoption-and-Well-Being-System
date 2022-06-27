@@ -80,6 +80,7 @@ require 'dbcon1.php';
                                 </table>
 
                             </div>
+                        </section>
                     </div>
                 </div>
             </div>

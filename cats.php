@@ -59,43 +59,68 @@ require './provider/dbcon1.php';
 
     <section class="cats">
 
-        <h1 class="heading-title">Adopt Now</h1>
-        <?php if (isset($_SESSION['message'])) :   ?>
-            <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
-                <?php
-                echo $_SESSION['message'];
-                unset($_SESSION['message']);
-                ?>
-            </h1>
-        <?php endif; ?>
-        <div class="box-container">
-            <?php
-            $query = "SELECT * FROM cats";
-            $query_run = mysqli_query($con, $query);
+        <form action="cats.php" method="post">
+            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
+            <input type="submit" name="search" value="Filter"><br><br>
 
-            if (mysqli_num_rows($query_run) > 0) {
-                foreach ($query_run as $cats) {
-            ?>
-                    <div class="box">
-                        <div class="image">
-                            <img src="images/<?= $cats['image']; ?>" alt="">
-                        </div>
-                        <div class="content">
-                            <h3><?= $cats['name']; ?></h3>
-                            <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
-                            <a href="adopt.php?catId=<?php echo $cats['cat_id']; ?>" class="btn">Adopt</a>
-                        </div>
-                    </div>
+            <?php if (isset($_SESSION['message'])) :   ?>
+                <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
+                    <?php
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                        ?>
+                </h1>
+            <?php endif; ?>
             <?php
-                }
+
+            if (isset($_POST['search'])) {
+                $valueToSearch = $_POST['valueToSearch'];
+                if ('valuetoSeach' === "male")
+                
+                // search in all table columns
+                // using concat mysql function
+                $query = "SELECT * FROM cats WHERE CONCAT(breed, age, gender) LIKE '%" . $valueToSearch . "%'";
+                $search_result = filterTable($query);
             } else {
-                echo "<h5> No Record Found </h5>";
+                $query = "SELECT * FROM cats";
+                $search_result = filterTable($query);
             }
+
+            // function to connect and execute the query
+            function filterTable($query)
+            {
+                $connect = mysqli_connect("localhost", "root", "", "fyp");
+                $filter_Result = mysqli_query($connect, $query);
+                return $filter_Result;
+            }
+
             ?>
+            <div class="box-container">
+                <?php
+                $query = "SELECT * FROM cats";
+                $query_run = mysqli_query($con, $query);
+
+                    while ($row = mysqli_fetch_array($search_result)) {
+                    foreach ($search_result as $cats) {
+                        ?>
+                        <div class="box">
+                            <div class="image">
+                                <img src="images/<?= $cats['image']; ?>" alt="">
+                            </div>
+                            <div class="content">
+                                <h3><?= $cats['name']; ?></h3>
+                                <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
+                                <a href="adopt.php?catId=<?php echo $cats['cat_id']; ?>" class="btn">Adopt</a>
+                            </div>
+                        </div>
+                <?php
+                    }
+                } 
+                ?>
 
 
-        </div>
-        <div class="load-more"><span class="btn">Load More</span></div>
+            </div>
+            <div class="load-more"><span class="btn">Load More</span></div>
     </section>
 
     <!-- cats section ends -->
