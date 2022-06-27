@@ -66,21 +66,23 @@ require './provider/dbcon1.php';
             <?php if (isset($_SESSION['message'])) :   ?>
                 <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
                     <?php
-                        echo $_SESSION['message'];
-                        unset($_SESSION['message']);
-                        ?>
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                    ?>
                 </h1>
             <?php endif; ?>
             <?php
 
             if (isset($_POST['search'])) {
                 $valueToSearch = $_POST['valueToSearch'];
-                if ('valuetoSeach' === "male")
-                
-                // search in all table columns
-                // using concat mysql function
-                $query = "SELECT * FROM cats WHERE CONCAT(breed, age, gender) LIKE '%" . $valueToSearch . "%'";
-                $search_result = filterTable($query);
+                if ($valueToSearch === "male") {
+                    $query = 'SELECT * FROM cats WHERE gender="male"';
+                    $search_result = filterTable($query);
+                } else {
+
+                    $query = "SELECT * FROM cats WHERE CONCAT(breed, age, gender) LIKE '%" . $valueToSearch . "%'";
+                    $search_result = filterTable($query);
+                }
             } else {
                 $query = "SELECT * FROM cats";
                 $search_result = filterTable($query);
@@ -100,9 +102,9 @@ require './provider/dbcon1.php';
                 $query = "SELECT * FROM cats";
                 $query_run = mysqli_query($con, $query);
 
-                    while ($row = mysqli_fetch_array($search_result)) {
+                while ($row = mysqli_fetch_array($search_result)) {
                     foreach ($search_result as $cats) {
-                        ?>
+                ?>
                         <div class="box">
                             <div class="image">
                                 <img src="images/<?= $cats['image']; ?>" alt="">
@@ -115,7 +117,7 @@ require './provider/dbcon1.php';
                         </div>
                 <?php
                     }
-                } 
+                }
                 ?>
 
 
