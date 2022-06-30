@@ -70,7 +70,7 @@ endif;
             <div class="flex">
                 <div class="inputBox">
                     <span>Username</span>
-                    <input type="text" placeholder="Enter Your Username" name="username" required="required">
+                    <input type="text" class="username" placeholder="Enter Your Username" name="username" required="required">
                 </div>
                 <div class="inputBox">
                     <span>Email :</span>
@@ -150,10 +150,16 @@ endif;
             let Parameters = new URLSearchParams(window.location.search);
             return Parameters.get(paraName);
         }
+
         var catId = getURLparameter('catId');
+        var username = getURLparameter('username');
+
         const catIdInput = document.querySelector('.catId');
+        const usernameInput = document.querySelector('.username');
+
         catIdInput.value = catId;
-        console.log(catId)
+        usernameInput.value = username;
+        console.log(username);
     </script>
 
 

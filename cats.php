@@ -66,9 +66,9 @@ require './provider/dbcon1.php';
             <?php if (isset($_SESSION['message'])) :   ?>
                 <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
                     <?php
-                        echo $_SESSION['message'];
-                        unset($_SESSION['message']);
-                        ?>
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                    ?>
                 </h1>
             <?php endif; ?>
             <?php
@@ -104,7 +104,7 @@ require './provider/dbcon1.php';
 
                 while ($row = mysqli_fetch_array($search_result)) {
                     foreach ($search_result as $cats) {
-                        ?>
+                ?>
                         <div class="box">
                             <div class="image">
                                 <img src="images/<?= $cats['image']; ?>" alt="">
@@ -112,15 +112,13 @@ require './provider/dbcon1.php';
                             <div class="content">
                                 <h3><?= $cats['name']; ?></h3>
                                 <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
-                                <a href="adopt.php?catId=<?php echo $cats['cat_id']; ?>" class="btn">Adopt</a>
+                                <a href="adopt.php?catId=<?php echo $cats['cat_id'] . "&username=" . $username  ?>" class="btn">Adopt</a>
                             </div>
                         </div>
                 <?php
                     }
                 }
                 ?>
-
-
             </div>
             <div class="load-more"><span class="btn">Load More</span></div>
         </form>

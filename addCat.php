@@ -68,6 +68,10 @@ endif;
                     <input type="number" placeholder="Enter Your Cat ID" name="cat_id" required="required">
                 </div>
                 <div class="inputBox">
+                    <span>username</span>
+                    <input type="text" value="<?php echo $_SESSION['username'] ?>" name="username" required="required">
+                </div>
+                <div class="inputBox">
                     <span>Name</span>
                     <input type="name" placeholder="Enter Your Cat Name" name="name" required="required">
                 </div>

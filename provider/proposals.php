@@ -72,7 +72,7 @@ require 'dbcon1.php';
 
                         if (mysqli_num_rows($query_run) > 0) {
                             foreach ($query_run as $adopt_form) {
-                                ?>
+                        ?>
                                 <tr>
                                     <td><?= $adopt_form['username']; ?></td>
                                     <td><?= $adopt_form['email']; ?></td>
