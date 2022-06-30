@@ -11,7 +11,7 @@ if (isset($_POST['send'])) {
     $age = $_POST['age'];
     $image = $_POST['image'];
 
-    $request = " insert into cats(cat_id, name, gender, breed, age, image, email) values('$cat_id','$name','$gender','$breed','$age','$image', '$username') ";
+    $request = " insert into cats(cat_id, name, gender, breed, age, image, username) values('$cat_id','$name','$gender','$breed','$age','$image', '$username') ";
     mysqli_query($connection, $request);
 
     header('location: ../cats.php?status=success');

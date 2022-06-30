@@ -1,88 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notification page</title>
-    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
-    <!-- font awesome cdn link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
-    <!-- custom css file link -->
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <title>Notifications</title>
+    <link rel="stylesheet" href="css/list.css" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
+
     <?php
     session_start();
     require './provider/dbcon1.php';
     $username = $_SESSION ? $_SESSION['username'] : null;
     ?>
-    <section class="header">
-        <a href="home.php" class="logo">Cats Adoption and Well-Being</a>
-        <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="cats.php">Cats</a>
-            <?php
-            if ($username) {
-                echo ('<a href="notification.php">Requests</a>');
-                echo ('<a href="./controllers/logout.controller.php">Logout</a>');
-            } else {
-                echo ('<a href="login.php">Login</a>');
-            }
-            ?>
+    
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="notifications.php" class="logo">
+                        <i class="fas fa-bell"></i>
+                        <span class=" nav-item">Notifications</span>
+                    </a></li>
+
+                <li><a href="home.php">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-item">Home</span>
+                    </a></li>
+                <li><a href="cats.php">
+                        <i class="fas fa-cat"></i>
+                        <span class="nav-item">Cats</span>
+                    </a></li>
+                <li><a href="about.php">
+                        <i class="fas fa-address-card"></i>
+                        <span class="nav-item">About Us</span>
+                    </a></li>
+                <li><a href="controllers/logout.controller.php" class="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-item">Log out</span>
+                    </a></li>
+            </ul>
         </nav>
-        <div id="menu-btn" class="fas fa-bars"></div>
-    </section>
-    <p>This is your requests</p>
+        <section class="attendance">
+            <div class="attendance-list">
+                <h1>Requests List</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Cat ID</th>
+                            <th>Address</th>
+                            <th>Mobile number</th>
+                            <th>Post Code</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Cat ID</th>
-                <th>Address</th>
-                <th>Mobile number</th>
-                <th>Post Code</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
+                    <tbody>
+                        <?php
+                        $query = "SELECT * FROM adopt_form WHERE username='$username'";
+                        $query_run = mysqli_query($con, $query);
 
-        <tbody>
-            <?php
-            $query = "SELECT * FROM adopt_form WHERE username='$username'";
-            $query_run = mysqli_query($con, $query);
+                        if (mysqli_num_rows($query_run) > 0) {
+                            foreach ($query_run as $adopt_form) {
+                                ?>
+                                <tr>
+                                    <td><?= $adopt_form['username']; ?></td>
+                                    <td><?= $adopt_form['email']; ?></td>
+                                    <td><?= $adopt_form['catID']; ?></td>
+                                    <td><?= $adopt_form['address']; ?></td>
+                                    <td><?= $adopt_form['phonenumber']; ?></td>
+                                    <td><?= $adopt_form['postcode']; ?></td>
+                                    <td><?= $adopt_form['status']; ?></td>
+                                </tr>
 
-            if (mysqli_num_rows($query_run) > 0) {
-                foreach ($query_run as $adopt_form) {
-            ?>
-                    <tr>
-                        <td><?= $adopt_form['username']; ?></td>
-                        <td><?= $adopt_form['email']; ?></td>
-                        <td><?= $adopt_form['catID']; ?></td>
-                        <td><?= $adopt_form['address']; ?></td>
-                        <td><?= $adopt_form['phonenumber']; ?></td>
-                        <td><?= $adopt_form['postcode']; ?></td>
-                        <td><?= $adopt_form['status']; ?></td>
-                    </tr>
-
-            <?php
-                }
-            } else {
-                echo "<h5> No Record Found </h5>";
-            }
-            ?>
+                        <?php
+                            }
+                        } else {
+                            echo "<h5> No Record Found </h5>";
+                        }
+                        ?>
 
 
-        </tbody>
-    </table>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 </body>
+
+
+
+<script>
+    function proposalUpdateState(status, catId) {
+        console.log({
+            status,
+            catId
+        })
+
+        $.ajax({
+            type: "POST",
+            url: '../controllers/adopt_form.php',
+            data: {
+                action: "updateState",
+                status,
+                catId
+            },
+            success: function(html) {
+                alert(html);
+            }
+        });
+    }
+</script>
 
 </html>

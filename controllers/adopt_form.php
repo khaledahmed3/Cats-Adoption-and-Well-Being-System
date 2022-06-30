@@ -47,7 +47,7 @@ if (isset($_POST['action'])) {
    $query = "UPDATE adopt_form SET status = '$status' WHERE catID = $catId;";
    if ($connection->query($query) === TRUE) {
       echo "Action Has Been Taken! 
-            Please Refresh This Page To See New Status";
+Please Refresh This Page To See New Status";
    } else {
       echo "Something Went Wrong!";
    }

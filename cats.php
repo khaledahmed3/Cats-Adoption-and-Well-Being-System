@@ -39,6 +39,7 @@ require './provider/dbcon1.php';
             <a href="cats.php">Cats</a>
             <?php
             if ($username) {
+                echo ('<a href="notification.php">Notification</a>');
                 echo ('<a href="./controllers/logout.controller.php">Logout</a>');
             } else {
                 echo ('<a href="login.php">Login</a>');
