@@ -58,17 +58,17 @@ require './provider/dbcon1.php';
     </div>
 
     <section class="cats">
-
         <form action="cats.php" method="post">
-            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
-            <input type="submit" name="search" value="Filter"><br><br>
+
+            <input type="text" name="valueToSearch" placeholder="Search With Filters. i.e: Gender, Age or Breed" required>
+            <input type="submit" name="search" value="Filter" class="btn"><br><br>
 
             <?php if (isset($_SESSION['message'])) :   ?>
                 <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
                     <?php
-                    echo $_SESSION['message'];
-                    unset($_SESSION['message']);
-                    ?>
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                        ?>
                 </h1>
             <?php endif; ?>
             <?php
@@ -104,7 +104,7 @@ require './provider/dbcon1.php';
 
                 while ($row = mysqli_fetch_array($search_result)) {
                     foreach ($search_result as $cats) {
-                ?>
+                        ?>
                         <div class="box">
                             <div class="image">
                                 <img src="images/<?= $cats['image']; ?>" alt="">
@@ -123,6 +123,7 @@ require './provider/dbcon1.php';
 
             </div>
             <div class="load-more"><span class="btn">Load More</span></div>
+        </form>
     </section>
 
     <!-- cats section ends -->

@@ -20,9 +20,21 @@ if (isset($_POST['send'])) {
       echo "not good";
    }
 
-
    $_SESSION['message'] = "Record has been saved";
    $_SESSION['msg_type'] = "success";
 
    header("Location: ../cats.php");
+}
+
+if ($_POST['action'] == 'updateState') {
+   $status = $_POST['status'];
+   $catId = $_POST['catId'];
+
+   $query = "UPDATE adopt_form SET status = '$status' WHERE catID = $catId;";
+   if ($connection->query($query) === TRUE) {
+      echo "Action Has Been Taken! 
+Please Refresh This Page To See New Status";
+   } else {
+      echo "Something Went Wrong!";
+   }
 }

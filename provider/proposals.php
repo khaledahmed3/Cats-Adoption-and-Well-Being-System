@@ -14,6 +14,7 @@ require 'dbcon1.php';
     <link rel="stylesheet" href="../css/list.css" />
     <!-- Font Awesome Cdn Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -49,31 +50,44 @@ require 'dbcon1.php';
         </nav>
         <section class="attendance">
             <div class="attendance-list">
-                <h1>Client List</h1>
+                <h1>Proposals List</h1>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
+                            <th>Username</th>
                             <th>Email</th>
-                            <th>Role ID</th>
+                            <th>Cat ID</th>
+                            <th>Address</th>
+                            <th>Mobile number</th>
+                            <th>Post Code</th>
+                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <?php
-                        $query = "SELECT * FROM users WHERE role_id=2";
+                        $query = "SELECT * FROM adopt_form";
                         $query_run = mysqli_query($con, $query);
 
                         if (mysqli_num_rows($query_run) > 0) {
-                            foreach ($query_run as $users) {
+                            foreach ($query_run as $adopt_form) {
                                 ?>
                                 <tr>
-                                    <td><?= $users['id']; ?></td>
-                                    <td><?= $users['username']; ?></td>
-                                    <td><?= $users['email']; ?></td>
-                                    <td><?= $users['role_id']; ?></td>
+                                    <td><?= $adopt_form['username']; ?></td>
+                                    <td><?= $adopt_form['email']; ?></td>
+                                    <td><?= $adopt_form['catID']; ?></td>
+                                    <td><?= $adopt_form['address']; ?></td>
+                                    <td><?= $adopt_form['phonenumber']; ?></td>
+                                    <td><?= $adopt_form['postcode']; ?></td>
+                                    <td><?= $adopt_form['status']; ?></td>
+                                    <td>
+                                        <button class="btn btn-primary" onclick="proposalUpdateState('approved',<?= $adopt_form['catID']; ?>)">Approve</button>
+                                        <button class="btn btn-primary" onclick="proposalUpdateState('rejected',<?= $adopt_form['catID']; ?>)">Rejecte</button>
+
+                                    </td>
                                 </tr>
+
                         <?php
                             }
                         } else {
@@ -85,49 +99,31 @@ require 'dbcon1.php';
                     </tbody>
                 </table>
             </div>
-            <div>
-                <div class="attendance-list">
-                    <h1>Cats List</h1>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Cat ID</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Breed</th>
-                                <th>Age</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $query = "SELECT * FROM cats";
-                            $query_run = mysqli_query($con, $query);
-
-                            if (mysqli_num_rows($query_run) > 0) {
-                                foreach ($query_run as $cats) {
-                                    ?>
-                                    <tr>
-
-                                        <td><?= $cats['cat_id']; ?></td>
-                                        <td><?= $cats['name']; ?></td>
-                                        <td><?= $cats['gender']; ?></td>
-                                        <td><?= $cats['breed']; ?></td>
-                                        <td><?= $cats['age']; ?></td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo "<h5> No Record Found </h5>";
-                            }
-                            ?>
-
-                        </tbody>
-                    </table>
-                </div>
         </section>
-
-    </div>
-
 </body>
+
+
+
+<script>
+    function proposalUpdateState(status, catId) {
+        console.log({
+            status,
+            catId
+        })
+
+        $.ajax({
+            type: "POST",
+            url: '../controllers/adopt_form.php',
+            data: {
+                action: "updateState",
+                status,
+                catId
+            },
+            success: function(html) {
+                alert(html);
+            }
+        });
+    }
+</script>
 
 </html>

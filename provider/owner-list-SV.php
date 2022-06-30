@@ -35,6 +35,10 @@ require 'dbcon1.php';
                         <i class="fas fa-heart"></i>
                         <span class="nav-item">Healthcare</span>
                     </a></li>
+                <li><a href="Proposals.php">
+                        <i class="fas fa-envelope"></i>
+                        <span class="nav-item">Proposals</span>
+                    </a></li>
                 <li><a href="../controllers/logout.controller.php" class="logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span class="nav-item">Log out</span>

@@ -5,7 +5,7 @@
 require './controllers/adopt_form.php';
 
 if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
+    $username = $_SESSION && $_SESSION['username'];
 }
 if (isset($_GET["status"])) :
     echo "<script>alert('Form Submitted Succesfully');</script>";
