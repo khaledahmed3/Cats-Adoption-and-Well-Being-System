@@ -51,7 +51,7 @@ endif;
 
 
     <div class="heading" style="background:url(images/bg.png) no-repeat">
-        <h1>Put Your Cat For Adoption</h1>
+        <h1>Post Your Cat For Adoption</h1>
     </div>
 
     <!-- adopting section starts  -->
@@ -68,7 +68,7 @@ endif;
                     <input type="number" placeholder="Enter Your Cat ID" name="cat_id" required="required">
                 </div>
                 <div class="inputBox">
-                    <span>username</span>
+                    <span>Username</span>
                     <input type="text" value="<?php echo $_SESSION['username'] ?>" name="username" required="required">
                 </div>
                 <div class="inputBox">
@@ -88,7 +88,7 @@ endif;
                     <input type="number" placeholder="Enter Your Cat Age" name="age" required="required">
                 </div>
                 <div class="inputBox">
-                    <span>images</span>
+                    <span>Image</span>
                     <input type="file" placeholder="Upload Your Cat Picture" name="image" required="required">
                 </div>
             </div>
