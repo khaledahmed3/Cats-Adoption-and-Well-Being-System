@@ -54,6 +54,10 @@ session_start();
                                 <input type="number" name="age" class="form-control">
                             </div>
                             <div class="mb-3">
+                                <label>Vaccinated</label>
+                                <input type="text" name="vaccinated" class="form-control">
+                            </div>
+                            <div class="mb-3">
                                 <label>Image</label>
                                 <input type="file" name="image" value="Upload" class="form-control">
                             </div>

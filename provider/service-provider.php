@@ -96,6 +96,7 @@ require 'dbcon1.php';
                                 <th>Gender</th>
                                 <th>Breed</th>
                                 <th>Age</th>
+                                <th>Vaccinated</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -113,6 +114,8 @@ require 'dbcon1.php';
                                         <td><?= $cats['gender']; ?></td>
                                         <td><?= $cats['breed']; ?></td>
                                         <td><?= $cats['age']; ?></td>
+                                        <td><?= $cats['vaccinated']; ?></td>
+
                                     </tr>
                             <?php
                                 }

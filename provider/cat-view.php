@@ -67,27 +67,32 @@ require 'dbcon1.php';
                                     <p class="form-control">
                                         <?= $cats['age']; ?>
                                     </p>
-                                </div>
-                                <div class="mb-3">
-                                    <label>Image</label>
-                                    <p class="form-control">
-                                        <?= $cats['image']; ?>
-                                    </p>
-                                </div>
+                                    <div class="mb-3">
+                                        <label>Vaccinated</label>
+                                        <p class="form-control">
+                                            <?= $cats['vaccinated']; ?>
+                                        </p>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label>Image</label>
+                                        <p class="form-control">
+                                            <?= $cats['image']; ?>
+                                        </p>
+                                    </div>
 
-                        <?php
-                            } else {
-                                echo "<h4>No Such Id Found</h4>";
+                            <?php
+                                } else {
+                                    echo "<h4>No Such Id Found</h4>";
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                                </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -88,6 +88,10 @@ endif;
                     <input type="number" placeholder="Enter Your Cat Age" name="age" required="required">
                 </div>
                 <div class="inputBox">
+                    <span>Vaccinated</span>
+                    <input type="text" placeholder="Yes/No" name="vaccinated" required="required">
+                </div>
+                <div class="inputBox">
                     <span>Image</span>
                     <input type="file" placeholder="Upload Your Cat Picture" name="image" required="required">
                 </div>

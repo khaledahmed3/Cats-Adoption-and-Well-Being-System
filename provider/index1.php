@@ -42,6 +42,7 @@ require 'dbcon1.php';
                                             <th>Gender</th>
                                             <th>Breed</th>
                                             <th>Age</th>
+                                            <th>Vaccinated</th>
                                             <th>image</th>
                                         </tr>
                                     </thead>
@@ -54,12 +55,13 @@ require 'dbcon1.php';
                                             foreach ($query_run as $cats) {
                                                 ?>
                                                 <tr>
-                                                    
+
                                                     <td><?= $cats['cat_id']; ?></td>
                                                     <td><?= $cats['name']; ?></td>
                                                     <td><?= $cats['gender']; ?></td>
                                                     <td><?= $cats['breed']; ?></td>
                                                     <td><?= $cats['age']; ?></td>
+                                                    <td><?= $cats['vaccinated']; ?></td>
                                                     <td><?= $cats['image']; ?></td>
                                                     <td>
                                                         <a href="cat-view.php?id=<?= $cats['id']; ?>" class="btn btn-info btn-sm">View</a>

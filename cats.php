@@ -14,10 +14,10 @@ require './provider/dbcon1.php';
     <title>Cats</title>
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <!-- font awesome cdn link -->
@@ -67,9 +67,9 @@ require './provider/dbcon1.php';
             <?php if (isset($_SESSION['message'])) :   ?>
                 <h1 class="alert alert-<?php echo $_SESSION['msg_type'] ?> " role="alert" id="alert">
                     <?php
-                    echo $_SESSION['message'];
-                    unset($_SESSION['message']);
-                    ?>
+                        echo $_SESSION['message'];
+                        unset($_SESSION['message']);
+                        ?>
                 </h1>
             <?php endif; ?>
             <?php
@@ -105,14 +105,14 @@ require './provider/dbcon1.php';
 
                 while ($row = mysqli_fetch_array($search_result)) {
                     foreach ($search_result as $cats) {
-                ?>
+                        ?>
                         <div class="box">
                             <div class="image">
                                 <img src="images/<?= $cats['image']; ?>" alt="">
                             </div>
                             <div class="content">
                                 <h3><?= $cats['name']; ?></h3>
-                                <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
+                                <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?>, Vaccinated: <?= $cats['vaccinated']; ?></p>
 
                                 <?php if ($username == null) :   ?>
                                     <a href="login.php" class="btn">Adopt</a>

@@ -67,6 +67,10 @@ require 'dbcon1.php';
                                         <input type="number" name="age" value="<?= $cats['age']; ?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
+                                        <label>Vaccinated</label>
+                                        <input type="text" name="vaccinated" value="<?= $cats['vaccinated']; ?>" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
                                         <label>Image</label>
                                         <input type="file" name="image" value="<?= $cats['image']; ?>" class="form-control">
                                     </div>
