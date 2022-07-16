@@ -14,17 +14,15 @@ if ($result->num_rows > 0) {
     $_SESSION['username'] = $value['username'];
     $_SESSION['role_id'] = $value['role_id'];
     // echo print_r($_SESSION);
-    
-    echo($value['role_id']);
+
+    echo ($value['role_id']);
 
     if ($value['role_id'] == 1) {
       header('Location: ../admin/admin.php');
-    }
-    else if ($value['role_id'] == 3) {
+    } else if ($value['role_id'] == 3) {
       header('Location: ../provider/service-provider.php');
-    }
-    else {
-      header('Location: ../home.php');
+    } else {
+      header('Location: ../index.php');
     }
   }
 } else {

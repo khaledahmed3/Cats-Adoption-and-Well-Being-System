@@ -16,5 +16,5 @@ if (isset($_POST['send'])) {
 
     header('location: ../cats.php?status=success');
 } else {
-    echo "<script>alert('Empty fields are required');document.location='../home.php'</script>";
+    echo "<script>alert('Empty fields are required');document.location='../index.php'</script>";
 }

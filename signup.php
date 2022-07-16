@@ -20,9 +20,9 @@
 
     <!-- header section starts -->
     <section class="header">
-        <a href="home.php" class="logo">Cats Adoption and Well-Being</a>
+        <a href="index.php" class="logo">Cats Adoption and Well-Being</a>
         <nav class="navbar">
-            <a href="home.php">Home</a>
+            <a href="index.php">Home</a>
             <a href="about.php">About</a>
             <a href="cats.php">Cats</a>
             <a href="login.php">Login</a>
@@ -49,7 +49,7 @@
                 <input type="password" name="password_1" placeholder="Password" />
                 <label>Confirm Password</label>
                 <input type="password" name="password_2" placeholder="Confirm Password" />
-                
+
                 <input type="submit" value="Register" class="btn">
 
             </form>
@@ -72,7 +72,7 @@
 
             <div class="box">
                 <h3>Quick links</h3>
-                <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
+                <a href="index.php"> <i class="fas fa-angle-right"></i> Home</a>
                 <a href="about.php"><i class="fas fa-angle-right"></i> About</a>
                 <a href="cats.php"><i class="fas fa-angle-right"></i> Cats</a>
                 <a href="login.php"><i class="fas fa-angle-right"></i> Login</a>

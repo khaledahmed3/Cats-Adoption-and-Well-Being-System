@@ -13,7 +13,7 @@
       {
           session_start();
           $_SESSION['username'] = $username;
-          header('Location: ../home.php');
+          header('Location: ../index.php');
       }
               
       else
@@ -21,5 +21,3 @@
   }
   else
       echo "<script>alert('The password does not match');document.location='../signup.php'</script>";
-  
-  ?>

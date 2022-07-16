@@ -4,7 +4,7 @@
 session_start();
 $usernarme = $_SESSION ? $_SESSION['username'] : null;
 $role_id = $_SESSION ? $_SESSION['role_id'] : null;
-if ($role_id != 1) header('Location: home.php');
+if ($role_id != 1) header('Location: index.php');
 require 'dbcon.php';
 ?>
 
