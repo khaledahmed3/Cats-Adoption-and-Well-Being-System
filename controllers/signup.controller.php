@@ -7,7 +7,7 @@
   
   if($password === $passwordConfirmation)
   {
-      $conn = mysqli_connect("localhost","root","","fyp");
+      $conn = mysqli_connect("us-cdbr-east-06.cleardb.net", "b6a98a7accba2a", "85cf840c", "heroku_fbe29bfef8d965d");
       $query = "INSERT INTO `users`(`email`, `username`, `password`) VALUES ('$email','$username','$password')";
       if(mysqli_query($conn,$query))
       {

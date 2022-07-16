@@ -1,6 +1,6 @@
 <?php
 
-$connection = mysqli_connect('localhost:3306', 'root', '', 'fyp');
+$connection = mysqli_connect("us-cdbr-east-06.cleardb.net", "b6a98a7accba2a", "85cf840c", "heroku_fbe29bfef8d965d");
 
 if (isset($_POST['send'])) {
     $cat_id = $_POST['cat_id'];

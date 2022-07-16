@@ -92,7 +92,7 @@ require './provider/dbcon1.php';
             // function to connect and execute the query
             function filterTable($query)
             {
-                $connect = mysqli_connect("localhost", "root", "", "fyp");
+                $connect = mysqli_connect("us-cdbr-east-06.cleardb.net", "b6a98a7accba2a", "85cf840c", "heroku_fbe29bfef8d965d");
                 $filter_Result = mysqli_query($connect, $query);
                 return $filter_Result;
             }

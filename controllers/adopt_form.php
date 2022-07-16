@@ -1,6 +1,7 @@
 <?php
 
-$connection = new mysqli('localhost', 'root', '', 'fyp');
+$connection = new mysqli('"us-cdbr-east-06.cleardb.net", "b6a98a7accba2a", "85cf840c", "heroku_fbe29bfef8d965d"');
+
 session_start();
 
 if (isset($_POST['send'])) {
