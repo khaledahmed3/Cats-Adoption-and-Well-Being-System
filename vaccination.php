@@ -60,7 +60,7 @@ $username = $_SESSION ? $_SESSION['username'] : null;
     <section class="about">
 
         <div class="image">
-            <img src="images/distemper.jpg" alt="">
+            <img src="images/Distemper.jpg" alt="">
         </div>
 
         <div class="content">
@@ -75,7 +75,7 @@ $username = $_SESSION ? $_SESSION['username'] : null;
     <section class="about">
 
         <div class="image">
-            <img src="images/feline-viral.jpg" alt="">
+            <img src="images/Feline-Viral.jpg" alt="">
         </div>
 
         <div class="content">
@@ -90,7 +90,7 @@ $username = $_SESSION ? $_SESSION['username'] : null;
     <section class="about">
 
         <div class="image">
-            <img src="images/rabies.jpg" alt="">
+            <img src="images/Rabies.jpg" alt="">
         </div>
 
         <div class="content">
