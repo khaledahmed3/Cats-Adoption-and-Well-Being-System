@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'dbcon.php';
+require '.././provider/dbcon1.php';
 ?>
 
 
@@ -84,7 +85,7 @@ require 'dbcon.php';
                 </table>
             </div>
         </section>
-
+       
     </div>
 
 </body>

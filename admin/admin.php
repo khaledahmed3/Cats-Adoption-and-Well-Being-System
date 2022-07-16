@@ -30,7 +30,7 @@ require 'dbcon.php';
                     </a></li>
                 <li><a href="owner-list-A.php">
                         <i class="fas fa-users"></i>
-                        <span class="nav-item">Owners/Cats List</span>
+                        <span class="nav-item">List Of Owners</span>
                     </a></li>
                 <li><a href="service-provider-list.php">
                         <i class="fas fa-users"></i>
