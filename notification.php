@@ -22,7 +22,7 @@
     <div class="container">
         <nav>
             <ul>
-                <li><a href="notifications.php" class="logo">
+                <li><a href="notification.php" class="logo">
                         <i class="fas fa-bell"></i>
                         <span class=" nav-item">Notifications</span>
                     </a></li>
