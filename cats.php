@@ -115,7 +115,7 @@ require './provider/dbcon1.php';
                                 <p>Gender: <?= $cats['gender']; ?>, Breed: <?= $cats['breed']; ?>, Age: <?= $cats['age']; ?></p>
 
                                 <?php if ($username == null) :   ?>
-                                    <a href="login.php" class="btn">adopt</a>
+                                    <a href="login.php" class="btn">Adopt</a>
                                 <?php else :   ?>
                                     <a href="adopt.php?catId=<?php echo $cats['cat_id'] . "&username=" . $username  ?>" class="btn">Adopt</a>
                                 <?php endif;   ?>
