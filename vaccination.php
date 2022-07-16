@@ -58,14 +58,13 @@ $username = $_SESSION ? $_SESSION['username'] : null;
     <!-- vaccination section starts  -->
 
     <section class="about">
-
         <div class="image">
-            <img src="images/Distemper.jpg" alt="">
+            <img src="images/Rabies.jpg" alt="">
         </div>
 
         <div class="content">
-            <h3>Feline Distemper</h3>
-            <p>Panleukopenia, also known as feline distemper, is an extremely contagious and deadly disease caused by a virus. The virus is spread through contact with an infected cats saliva, urine, blood, nasal discharge, or feces. There is no cure for panleukopenia and, without treatment, it has a high mortality rate.</p>
+            <h3>Rabies</h3>
+            <p>Rabies in cats is a viral infection that affects the feline nervous system which includes the brain and spinal cord. All mammals are susceptible to contracting rabies. Rabies can be fatal if left untreated before symptoms appear, however, it is preventable with vaccines.</p>
 
         </div>
 
@@ -88,16 +87,16 @@ $username = $_SESSION ? $_SESSION['username'] : null;
 
 
     <section class="about">
-
         <div class="image">
-            <img src="images/Rabies.jpg" alt="">
+            <img src="images/Distemper.jpg" alt="">
         </div>
 
         <div class="content">
-            <h3>Rabies</h3>
-            <p>Rabies in cats is a viral infection that affects the feline nervous system which includes the brain and spinal cord. All mammals are susceptible to contracting rabies. Rabies can be fatal if left untreated before symptoms appear, however, it is preventable with vaccines.</p>
+            <h3>Feline Distemper</h3>
+            <p>Panleukopenia, also known as feline distemper, is an extremely contagious and deadly disease caused by a virus. The virus is spread through contact with an infected cats saliva, urine, blood, nasal discharge, or feces. There is no cure for panleukopenia and, without treatment, it has a high mortality rate.</p>
 
         </div>
+
 
     </section>
     <!-- vaccination section ends  -->
