@@ -121,7 +121,7 @@ $username = $_SESSION ? $_SESSION['username'] : null;
             <div class="box">
                 <img src="images/vaccination.jpg" alt="">
                 <h3>Vaccination</h3>
-                <a href="./provider/healthcare.php" class="btn">Click Here</a>
+                <a href="vaccination.php" class="btn">Click Here</a>
             </div>
 
         </div>
