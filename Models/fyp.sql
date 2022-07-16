@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2022 at 04:30 PM
+-- Generation Time: Jul 16, 2022 at 10:59 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -31,18 +31,22 @@ CREATE TABLE `adopt_form` (
   `id` int(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `catID` varchar(255) NOT NULL,
+  `catID` int(11) NOT NULL,
   `address` varchar(255) NOT NULL,
   `phonenumber` int(255) NOT NULL,
-  `postcode` int(255) NOT NULL
+  `postcode` int(255) NOT NULL,
+  `status` varchar(25) NOT NULL DEFAULT 'Pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `adopt_form`
 --
 
-INSERT INTO `adopt_form` (`id`, `username`, `email`, `catID`, `address`, `phonenumber`, `postcode`) VALUES
-
+INSERT INTO `adopt_form` (`id`, `username`, `email`, `catID`, `address`, `phonenumber`, `postcode`, `status`) VALUES
+(104, 'test', 'test@gmail.com', 25, 'danga bay, country garden', 123456789, 82300, 'rejected'),
+(105, 'Khalid', 'khaledahmed512@gmail.com', 3, 'danga bay, country garden', 125785489, 320165, 'approved'),
+(106, 'Khalid', 'khaledahmed512@gmail.com', 8, 'danga bay, country garden', 125785489, 82300, 'approved'),
+(107, 'Khalid', 'test@gmail.com', 99, 'danga bay, country garden', 123456789, 123456, 'rejected');
 
 -- --------------------------------------------------------
 
@@ -57,24 +61,23 @@ CREATE TABLE `cats` (
   `gender` varchar(100) NOT NULL,
   `breed` varchar(100) NOT NULL,
   `age` int(2) NOT NULL,
-  `image` varchar(55) NOT NULL
+  `image` varchar(55) NOT NULL,
+  `username` int(100) NOT NULL,
+  `vaccinated` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cats`
 --
 
-INSERT INTO `cats` (`id`, `cat_id`, `name`, `gender`, `breed`, `age`, `image`) VALUES
-(2, 3, 'Bella', 'Male', 'Persian', 2, 'cat1.jpg'),
-(3, 25, 'test', 'Male', 'Persian', 3, 'cat-3.jpeg'),
-(5, 3, 'sam', 'Female', 'Persian', 7, 'cat3.jpg'),
-(8, 8, 'soso', 'female', 'Persian', 8, 'cat-7.jpeg'),
-(10, 88, 'lula', 'Female', 'fluffy', 9, 'cat-5.jpeg'),
-(11, 55, 'nono', 'male', 'fluffy', 9, 'cat1.jpg'),
-(12, 99, 'sinjab', 'male', 'fluffy', 8, 'cat-11.jpeg'),
-(13, 122, 'test5', 'male', 'test', 9, 'cat-10.jpeg'),
-(14, 55, 'Ota', 'Female', 'Persian', 8, 'cat-9.jpeg'),
-(15, 89, 'Haya', 'Female', 'Oriental', 5, 'cat-5.jpeg');
+INSERT INTO `cats` (`id`, `cat_id`, `name`, `gender`, `breed`, `age`, `image`, `username`, `vaccinated`) VALUES
+(2, 3, 'Bella', 'Male', 'Persian', 2, 'cat1.jpg', 0, 'Yes'),
+(5, 3, 'Sam', 'Female', 'Persian', 7, 'cat3.jpg', 0, 'Yes'),
+(8, 8, 'Jazzi', 'Female', 'Persian', 8, 'cat-7.jpeg', 0, 'Yes'),
+(11, 55, 'Melo', 'Male', 'Oriental', 9, 'cat1.jpg', 0, 'Yes'),
+(12, 99, 'Sinjab', 'Male', 'Oriental', 8, 'cat-11.jpeg', 0, 'Yes'),
+(15, 89, 'Haya', 'Female', 'Oriental', 5, 'cat-5.jpeg', 0, 'Yes'),
+(17, 24, 'Lella', 'Female', 'Persian', 5, 'cat-8.jpeg', 0, 'Yes');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,7 @@ INSERT INTO `cats` (`id`, `cat_id`, `name`, `gender`, `breed`, `age`, `image`) V
 -- Table structure for table `permissions`
 --
 
-CREATE TABLE `permissions` (  
+CREATE TABLE `permissions` (
   `perm_id` int(11) NOT NULL,
   `perm_mod` varchar(5) NOT NULL,
   `perm_desc` varchar(255) NOT NULL
@@ -225,13 +228,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adopt_form`
 --
 ALTER TABLE `adopt_form`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `cats`
 --
 ALTER TABLE `cats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -249,7 +252,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
