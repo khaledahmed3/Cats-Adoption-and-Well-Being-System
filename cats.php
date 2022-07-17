@@ -61,7 +61,7 @@ require './provider/dbcon1.php';
     <section class="cats">
         <form action="cats.php" method="post">
 
-            <input type="text" name="valueToSearch" placeholder="Search With Filters. i.e: Gender, Age or Breed" required>
+            <input type="text" name="valueToSearch" placeholder="Search With Filters. i.e: Gender, Age, Vaccinated or Breed" required>
             <input type="submit" name="search" value="Filter" class="btn"><br><br>
 
             <?php if (isset($_SESSION['message'])) :   ?>
@@ -81,7 +81,7 @@ require './provider/dbcon1.php';
                     $search_result = filterTable($query);
                 } else {
 
-                    $query = "SELECT * FROM cats WHERE CONCAT(breed, age, gender) LIKE '%" . $valueToSearch . "%'";
+                    $query = "SELECT * FROM cats WHERE CONCAT(breed, age, gender, vaccinated) LIKE '%" . $valueToSearch . "%'";
                     $search_result = filterTable($query);
                 }
             } else {
