@@ -9,9 +9,10 @@ if (isset($_POST['send'])) {
     $gender = $_POST['gender'];
     $breed = $_POST['breed'];
     $age = $_POST['age'];
+    $vaccinated = $_POST['vaccinated'];
     $image = $_POST['image'];
 
-    $request = " insert into cats(cat_id, name, gender, breed, age, image, username) values('$cat_id','$name','$gender','$breed','$age','$image', '$username') ";
+    $request = " insert into cats(cat_id, name, gender, breed, age, image, vaccinated, username) values('$cat_id','$name','$gender','$breed','$age','$image', '$vaccinated', '$username') ";
     mysqli_query($connection, $request);
 
     header('location: ../cats.php?status=success');
