@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'dbcon.php';
+require '.././provider/dbcon1.php';
 ?>
 
 
@@ -21,13 +22,13 @@ require 'dbcon.php';
             <ul>
                 <li><a href="admin.php" class="logo">
                         <img src="../images/admin-icon.jpg">
-                        <span class="nav-item">Dashboard</span>
+                        <span class=" nav-item">Dashboard</span>
                     </a></li>
                 <li><a href="admin-list.php">
                         <i class="fas fa-user"></i>
                         <span class="nav-item">Admins</span>
                     </a></li>
-                <li><a href="owner-list-A.php">
+                <li><a href="owner-list.php">
                         <i class="fas fa-users"></i>
                         <span class="nav-item">List Of Owners</span>
                     </a></li>
@@ -52,43 +53,48 @@ require 'dbcon.php';
 
 
         <section class="attendance">
-            <div class="attendance-list">
-                <h1>Service Provider List</h1>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tbody>
-                        <?php
-                        $query = "SELECT * FROM users WHERE role_id=3";
-                        $query_run = mysqli_query($con, $query);
+            <div>
+                <div class="attendance-list">
+                    <h1>Cats List</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cat ID</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Breed</th>
+                                <th>Age</th>
+                                <th>Vaccinated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $query = "SELECT * FROM cats";
+                            $query_run = mysqli_query($con, $query);
 
-                        if (mysqli_num_rows($query_run) > 0) {
-                            foreach ($query_run as $users) {
-                                ?>
-                                <tr>
-                                    <td><?= $users['id']; ?></td>
-                                    <td><?= $users['username']; ?></td>
-                                    <td><?= $users['email']; ?></td>
-                                    <td><?= $users['role_id']; ?></td>
-                                </tr>
-                        <?php
+                            if (mysqli_num_rows($query_run) > 0) {
+                                foreach ($query_run as $cats) {
+                                    ?>
+                                    <tr>
+
+                                        <td><?= $cats['cat_id']; ?></td>
+                                        <td><?= $cats['name']; ?></td>
+                                        <td><?= $cats['gender']; ?></td>
+                                        <td><?= $cats['breed']; ?></td>
+                                        <td><?= $cats['age']; ?></td>
+                                        <td><?= $cats['vaccinated']; ?></td>
+
+                                    </tr>
+                            <?php
+                                }
+                            } else {
+                                echo "<h5> No Record Found </h5>";
                             }
-                        } else {
-                            echo "<h5> No Record Found </h5>";
-                        }
-                        ?>
+                            ?>
 
-                    </tbody>
-                </table>
-            </div>
-        </section>
+                        </tbody>
+                    </table>
+                </div>
         </section>
     </div>
 
